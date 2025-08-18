@@ -20,6 +20,9 @@ export function useQuote(): UseQuoteReturn {
     setIsLoading(true);
     setError(null);
     
+    const startTime = Date.now();
+    const minLoadingTime = 1500; // Mínimo 1.5 segundos de estado de carga
+    
     try {
       const response = await fetch('/api/quotes/random');
       const result = await response.json();
@@ -34,6 +37,14 @@ export function useQuote(): UseQuoteReturn {
       setError('Error de conexión al generar frase aleatoria');
       console.error('Error en generateRandomQuote:', err);
     } finally {
+      // Asegurar un tiempo mínimo de carga para mejor UX
+      const elapsedTime = Date.now() - startTime;
+      const remainingTime = Math.max(0, minLoadingTime - elapsedTime);
+      
+      if (remainingTime > 0) {
+        await new Promise(resolve => setTimeout(resolve, remainingTime));
+      }
+      
       setIsLoading(false);
     }
   }, []);
@@ -41,6 +52,9 @@ export function useQuote(): UseQuoteReturn {
   const generateQuoteByCategory = useCallback(async (category: string) => {
     setIsLoading(true);
     setError(null);
+    
+    const startTime = Date.now();
+    const minLoadingTime = 1500; // Mínimo 1.5 segundos de estado de carga
     
     try {
       const response = await fetch(`/api/quotes/category/${encodeURIComponent(category)}`);
@@ -56,6 +70,14 @@ export function useQuote(): UseQuoteReturn {
       setError('Error de conexión al generar frase por categoría');
       console.error('Error en generateQuoteByCategory:', err);
     } finally {
+      // Asegurar un tiempo mínimo de carga para mejor UX
+      const elapsedTime = Date.now() - startTime;
+      const remainingTime = Math.max(0, minLoadingTime - elapsedTime);
+      
+      if (remainingTime > 0) {
+        await new Promise(resolve => setTimeout(resolve, remainingTime));
+      }
+      
       setIsLoading(false);
     }
   }, []);
