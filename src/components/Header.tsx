@@ -1,8 +1,10 @@
 import { APP_CONFIG } from '@/lib/constants';
+import ThemeToggle from './ThemeToggle';
+import ClientOnly from './ClientOnly';
 
 export default function Header() {
   return (
-    <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
+    <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg dark:from-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-3">
@@ -23,12 +25,17 @@ export default function Header() {
             </div>
             <div>
               <h1 className="text-xl font-bold">{APP_CONFIG.NAME}</h1>
-              <p className="text-blue-100 text-sm">{APP_CONFIG.DESCRIPTION}</p>
+              <p className="text-blue-100 dark:text-blue-200 text-sm">{APP_CONFIG.DESCRIPTION}</p>
             </div>
           </div>
           
           <div className="flex items-center space-x-4">
-            <div className="text-sm text-blue-100">
+            <ClientOnly fallback={
+              <div className="w-20 h-10 bg-gray-300 dark:bg-gray-600 rounded-full animate-pulse"></div>
+            }>
+              <ThemeToggle />
+            </ClientOnly>
+            <div className="text-sm text-blue-100 dark:text-blue-200">
               v{APP_CONFIG.VERSION}
             </div>
           </div>

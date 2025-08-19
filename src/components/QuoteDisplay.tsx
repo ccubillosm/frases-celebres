@@ -22,24 +22,24 @@ export default function QuoteDisplay({
       <div className="flex flex-col lg:flex-row items-center justify-center gap-8 max-w-6xl mx-auto p-6">
         {/* Skeleton para imagen */}
         <div className="w-full lg:w-1/2">
-          <div className="w-full h-80 lg:h-96 bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl animate-pulse"></div>
+          <div className="w-full h-80 lg:h-96 bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 rounded-2xl animate-pulse"></div>
         </div>
         
         {/* Skeleton para contenido */}
         <div className="w-full lg:w-1/2 space-y-6">
           <div className="text-center lg:text-left">
             {/* Skeleton para categoría */}
-            <div className="inline-block w-24 h-8 bg-gray-200 rounded-full animate-pulse mb-4"></div>
+            <div className="inline-block w-24 h-8 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse mb-4"></div>
             
             {/* Skeleton para frase */}
             <div className="space-y-3 mb-6">
-              <div className="h-8 bg-gray-200 rounded w-full animate-pulse"></div>
-              <div className="h-8 bg-gray-200 rounded w-4/5 animate-pulse"></div>
-              <div className="h-8 bg-gray-200 rounded w-3/4 animate-pulse"></div>
+              <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-full animate-pulse"></div>
+              <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-4/5 animate-pulse"></div>
+              <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-3/4 animate-pulse"></div>
             </div>
             
             {/* Skeleton para autor */}
-            <div className="h-6 bg-gray-200 rounded w-32 animate-pulse"></div>
+            <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-32 animate-pulse"></div>
           </div>
         </div>
       </div>
@@ -51,12 +51,12 @@ export default function QuoteDisplay({
       <div className="flex flex-col lg:flex-row items-center justify-center gap-8 max-w-6xl mx-auto p-6">
         {/* Imagen de error */}
         <div className="w-full lg:w-1/2">
-          <div className="w-full h-80 lg:h-96 bg-gradient-to-br from-red-50 to-red-100 rounded-2xl flex items-center justify-center border-2 border-red-200">
+          <div className="w-full h-80 lg:h-96 bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900 dark:to-red-800 rounded-2xl flex items-center justify-center border-2 border-red-200 dark:border-red-700">
             <div className="text-center">
-              <svg className="w-20 h-20 mx-auto mb-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-20 h-20 mx-auto mb-4 text-red-400 dark:text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
               </svg>
-              <p className="text-lg font-semibold text-red-600">Error de Carga</p>
+              <p className="text-lg font-semibold text-red-600 dark:text-red-300">Error de Carga</p>
             </div>
           </div>
         </div>
@@ -64,13 +64,13 @@ export default function QuoteDisplay({
         {/* Mensaje de error */}
         <div className="w-full lg:w-1/2 space-y-6">
           <div className="text-center lg:text-left">
-            <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">No se pudo cargar la frase</h3>
-            <p className="text-lg text-gray-600 mb-4">Ha ocurrido un error al intentar obtener la frase o la imagen.</p>
-            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-              <p className="text-sm text-red-700 font-medium">Detalles del error:</p>
-              <p className="text-sm text-red-600 mt-1">{error}</p>
+            <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white mb-4">No se pudo cargar la frase</h3>
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">Ha ocurrido un error al intentar obtener la frase o la imagen.</p>
+            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 rounded-lg p-4">
+              <p className="text-sm text-red-700 dark:text-red-300 font-medium">Detalles del error:</p>
+              <p className="text-sm text-red-600 dark:text-red-400 mt-1">{error}</p>
             </div>
-            <p className="text-sm text-gray-500 mt-4">Intenta de nuevo más tarde o contacta al soporte si el problema persiste.</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">Intenta de nuevo más tarde o contacta al soporte si el problema persiste.</p>
           </div>
         </div>
       </div>
@@ -82,12 +82,12 @@ export default function QuoteDisplay({
       <div className="flex flex-col lg:flex-row items-center justify-center gap-8 max-w-6xl mx-auto p-6">
         {/* Placeholder para imagen */}
         <div className="w-full lg:w-1/2">
-          <div className="w-full h-80 lg:h-96 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-300">
+          <div className="w-full h-80 lg:h-96 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600">
             <div className="text-center">
-              <svg className="w-20 h-20 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-20 h-20 mx-auto mb-4 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              <p className="text-lg font-semibold text-gray-500">Imagen de Inspiración</p>
+              <p className="text-lg font-semibold text-gray-500 dark:text-gray-400">Imagen de Inspiración</p>
             </div>
           </div>
         </div>
@@ -95,20 +95,20 @@ export default function QuoteDisplay({
         {/* Placeholder para contenido */}
         <div className="w-full lg:w-1/2 space-y-6">
           <div className="text-center lg:text-left">
-            <div className="inline-block px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full text-sm font-medium mb-4">
               Categoría
             </div>
             
-            <blockquote className="text-2xl lg:text-3xl font-serif text-gray-400 leading-relaxed mb-6">
+            <blockquote className="text-2xl lg:text-3xl font-serif text-gray-400 dark:text-gray-500 leading-relaxed mb-6">
               &ldquo;Tu frase inspiradora aparecerá aquí&rdquo;
             </blockquote>
             
-            <cite className="text-lg text-gray-400 font-medium not-italic">
+            <cite className="text-lg text-gray-400 dark:text-gray-500 font-medium not-italic">
               — Autor
             </cite>
             
-            <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-              <p className="text-sm text-blue-700">
+            <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg">
+              <p className="text-sm text-blue-700 dark:text-blue-300">
                 💡 <strong>Consejo:</strong> Presiona el botón &ldquo;Generar Nueva Frase&rdquo; para comenzar tu jornada de inspiración.
               </p>
             </div>
@@ -140,17 +140,17 @@ export default function QuoteDisplay({
       <div className="w-full lg:w-1/2 space-y-6">
         <div className="text-center lg:text-left">
           {/* Categoría */}
-          <div className="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-4">
+          <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium mb-4">
             {capitalizeFirst(quote.category)}
           </div>
           
           {/* Texto de la frase */}
-          <blockquote className="text-2xl lg:text-3xl font-serif text-gray-800 leading-relaxed mb-6">
+          <blockquote className="text-2xl lg:text-3xl font-serif text-gray-800 dark:text-white leading-relaxed mb-6">
             &ldquo;{truncateText(quote.text, 200)}&rdquo;
           </blockquote>
           
           {/* Autor */}
-          <cite className="text-lg text-gray-600 font-medium not-italic">
+          <cite className="text-lg text-gray-600 dark:text-gray-300 font-medium not-italic">
             — {quote.author}
           </cite>
         </div>

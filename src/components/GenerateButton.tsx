@@ -20,13 +20,14 @@ export default function GenerateButton({
       className={`
         relative inline-flex items-center justify-center px-8 py-4 
         text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 
+        dark:from-blue-500 dark:to-purple-500
         rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 
         transition-all duration-300 ease-in-out
         ${disabled || isLoading 
           ? 'opacity-50 cursor-not-allowed hover:transform-none hover:shadow-lg' 
-          : 'hover:from-blue-700 hover:to-purple-700 active:transform-none active:scale-95'
+          : 'hover:from-blue-700 hover:to-purple-700 dark:hover:from-blue-600 dark:hover:to-purple-600 active:transform-none active:scale-95'
         }
-        focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50
+        focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-400 focus:ring-opacity-50
         ${isLoading ? 'animate-pulse' : ''}
       `}
     >
